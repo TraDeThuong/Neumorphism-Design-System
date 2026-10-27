@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Toaster, toast } from "react-hot-toast";
+import { Toaster, toast as hotToast } from "react-hot-toast";
 
 type ToastType = "success" | "error" | "loading" | "blank";
 
@@ -215,18 +215,18 @@ export function showToast(
   const base = options?.id ? { id: options.id } : {};
 
   if (type === "success") {
-    return toast.custom(content, { duration: 3000, ...base });
+    return hotToast.custom(content, { duration: 3000, ...base });
   }
 
   if (type === "error") {
-    return toast.custom(content, { duration: 5000, ...base });
+    return hotToast.custom(content, { duration: 5000, ...base });
   }
 
   if (type === "loading") {
-    return toast.custom(content, { duration: Infinity, ...base });
+    return hotToast.custom(content, { duration: Infinity, ...base });
   }
 
-  return toast.custom(content, { duration: 4000, ...base });
+  return hotToast.custom(content, { duration: 4000, ...base });
 }
 
 export function ToasterProvider() {
@@ -308,4 +308,24 @@ export function ToasterProvider() {
   );
 }
 
-export { toast };
+const toastWrapper = Object.assign(
+  (message: string, options?: { id?: string }) => showToast(message, "blank", options),
+  {
+    success: (message: string, options?: { id?: string }) =>
+      showToast(message, "success", options),
+    error: (message: string, options?: { id?: string }) =>
+      showToast(message, "error", options),
+    loading: (message: string, options?: { id?: string }) =>
+      showToast(message, "loading", options),
+    blank: (message: string, options?: { id?: string }) =>
+      showToast(message, "blank", options),
+    info: (message: string, options?: { id?: string }) =>
+      showToast(message, "blank", options),
+    dismiss: (toastId?: string) => hotToast.dismiss(toastId),
+    remove: (toastId?: string) => hotToast.remove(toastId),
+    custom: hotToast.custom,
+  },
+);
+
+export { toastWrapper as toast };
+export default toastWrapper;

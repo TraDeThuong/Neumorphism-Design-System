@@ -39,9 +39,9 @@ export default function RootLayout({
       <head>
         <InlineScript html={themeScript} />
       </head>
-      <body className="min-h-full flex bg-background font-sans text-foreground">
+      <body className="min-h-full flex flex-col md:flex-row bg-background font-sans text-foreground">
         <SideNav />
-        <main className="flex-1 p-8 lg:p-12">{children}</main>
+        <main className="flex-1 min-w-0 p-4 sm:p-6 md:p-8 lg:p-12 overflow-x-hidden">{children}</main>
         <ToasterProvider />
       </body>
     </html>

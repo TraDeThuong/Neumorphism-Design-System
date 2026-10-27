@@ -20,6 +20,42 @@ const components = [
       "Khối chứa nội dung với 6 biến thể (default, raised, inset, interactive, glass, accent) và 4 mức padding.",
   },
   {
+    href: "/stats-card",
+    name: "Stats Card (Thẻ chỉ số)",
+    description:
+      "Thẻ thống kê chỉ số KPI với 2 kiến trúc Neumorphic (Raised-Inset & Inset-Raised), hỗ trợ thanh tiến độ, xu hướng, icon 3D và đa cấp độ chiều sâu.",
+  },
+  {
+    href: "/table",
+    name: "Table (Bảng dữ liệu)",
+    description:
+      "Bảng dữ liệu Neumorphic toàn diện dựa trên TanStack Table v9 với 2 biến thể (Soft & Sculpted), tích hợp tìm kiếm, lọc đa cột, phân trang, chọn hàng loạt, sửa ô trực tiếp (inline edit) cùng sự phân định rõ ràng giữa Modal (hồ sơ chi tiết) và Dialog (xác nhận xóa).",
+  },
+  {
+    href: "/modal",
+    name: "Modal (Hộp thoại nội dung)",
+    description:
+      "Hộp thoại phong cách Neumorphic 3 lớp quang học đồng tâm (Outer Rim → Transition Groove → Inner Shell), chuyên dụng cho biểu mẫu, quy trình phân tích và báo cáo chi tiết.",
+  },
+  {
+    href: "/dialog",
+    name: "Dialog (Hộp thoại quyết định & cảnh báo)",
+    description:
+      "Hộp thoại xác nhận hành động nguy hiểm và bảng điều khiển âm tường (ConfirmDialog & RecessedDialog), tích hợp quỹ đạo hạt orbit, LED trạng thái và chống thao tác nhầm.",
+  },
+  {
+    href: "/badge",
+    name: "Badge (Huy hiệu & Nhãn)",
+    description:
+      "Huy hiệu trạng thái, nhãn lọc và bộ đếm thông báo Neumorphic với 8 biến thể màu, chỉ báo chấm/icon, nút xóa tag và hỗ trợ tương tác nhấn nhả.",
+  },
+  {
+    href: "/segmented-control",
+    name: "Segmented Control (Thanh chọn phân đoạn)",
+    description:
+      "Thanh chuyển đổi phân đoạn Neumorphic hỗ trợ hiệu ứng bóng viền 3D, gạch chân phát sáng ambient glow, điều hướng bàn phím W3C tablist và spinner loading.",
+  },
+  {
     href: "/components/toast",
     name: "Toast",
     description:
