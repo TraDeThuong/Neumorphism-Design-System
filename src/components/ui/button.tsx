@@ -4,7 +4,7 @@ import { forwardRef } from "react";
 const variantClasses = {
   primary: "bg-primary text-primary-foreground",
   secondary: "bg-secondary text-secondary-foreground",
-  outline: "bg-background text-foreground",
+  outline: "bg-background text-foreground border border-border/70",
   ghost: "bg-background text-foreground",
   danger: "bg-danger text-danger-foreground",
   hybrid: "bg-background text-foreground",

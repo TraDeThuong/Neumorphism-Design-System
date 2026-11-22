@@ -1,7 +1,7 @@
 
 "use client";
 
-import { useState } from "react";
+import { useState, forwardRef } from "react";
 import { Eye, EyeOff } from "lucide-react";
 
 import { Input, type InputProps } from "../foundation/input";
@@ -15,21 +15,26 @@ export interface PasswordInputProps
   };
 }
 
-function PasswordInput({
-  showPasswordToggle = true,
-  toggleLabel = {
-    show: "Hiện mật khẩu",
-    hide: "Ẩn mật khẩu",
-  },
-  disabled,
-  ...props
-}: PasswordInputProps) {
-  const [visible, setVisible] = useState(false);
+const PasswordInput = forwardRef<HTMLInputElement, PasswordInputProps>(
+  (
+    {
+      showPasswordToggle = true,
+      toggleLabel = {
+        show: "Hiện mật khẩu",
+        hide: "Ẩn mật khẩu",
+      },
+      disabled,
+      ...props
+    },
+    ref,
+  ) => {
+    const [visible, setVisible] = useState(false);
 
-  return (
-    <Input
-      {...props}
-      type={visible ? "text" : "password"}
+    return (
+      <Input
+        ref={ref}
+        {...props}
+        type={visible ? "text" : "password"}
       disabled={disabled}
       autoComplete={props.autoComplete ?? "current-password"}
       suffix={
@@ -63,6 +68,8 @@ function PasswordInput({
       }
     />
   );
-}
+});
+
+PasswordInput.displayName = "PasswordInput";
 
 export { PasswordInput };
